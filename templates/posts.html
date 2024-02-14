@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Posts page</h1>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-4">
+                    <div class="card">
+                        <img src="{{post.post_image.url}}" alt="">
+                        <p>{{post.title}}</p>
+                        <p>{{post.text}}</p>
+                        <p>{{post.created}}  <i class="fa-solid fa-eye"></i></p>
+                        <a href="{% url 'edit-post' post.id %}" class="text-warning">Edit</a>
+                        <a href="" class="text-danger">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

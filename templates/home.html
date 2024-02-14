@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+   
+   <div class="container mt-5">
+      <div class="w-100 border d-flex align-items-center justify-content-between" style="height: 100px;">
+         <h1 class="text-danger">Yahshi yangilik </h1>
+         <span class="fs-1 text-danger">yangilik ( {{yahshi_count}} ) ta</span>
+      </div>
+      <div class="row mt-4">
+         {% for y in yahshi %}
+            <div class="col-4">
+               <a href="{% url 'comment' y.id %}">
+                  <div class="card">
+                     <img src="{{ y.post_image.url }}" alt="{{y.title}}">
+                     <h1>{{y.title}}</h1>
+                     <p>{{y.text}}</p>
+                     <p>{{y.created}} <i class="fa-solid fa-eye"></i></p>
+                  </div>
+               </a>
+            </div>
+         {% endfor %}
+      </div>
+   </div>
+   <div class="container mt-4">
+      <div class="w-100 border d-flex align-items-center justify-content-between" style="height: 100px;">
+         <h1 class="text-danger">Yahshi yangilik </h1>
+         <span class="fs-1 text-danger">yangilik ( {{yomon_count}} ) ta</span>
+      </div>
+      <div class="row mt-4">
+         {% for n in yomon %}
+            <div class="col-4">
+               <a href="{% url 'comment' n.id %}">
+                  <div class="card">
+                     <img src="{{ n.post_image.url }}" alt="{{n.title}}">
+                     <h1 class="px-2">{{n.title}}</h1>
+                     <p class="px-2">{{n.text}}</p>
+                     <span class="px-2">{{n.created}} <i class="fa-solid fa-eye"></i></span>
+                  </div>
+               </a>
+            </div>
+         {% endfor %}
+      </div>
+   </div>
+
+
+{% endblock %}

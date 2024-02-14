@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <h1>Profile page</h1>
+    <form action="{% url 'profile' user.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button>Edit Profile</button>
+    </form>
+{% endblock %}

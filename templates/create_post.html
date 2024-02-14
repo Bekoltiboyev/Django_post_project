@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+   <div class="container">
+    <h1>Create Post page</h1>
+    <form action="{% url 'create_post' user.id  %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button>save post</button>
+    </form>
+   </div>
+{% endblock %}

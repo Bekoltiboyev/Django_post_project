@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <h1>Register page</h1>
+    <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        {% for form in forms %}
+            <label for="">{{form.label}}</label>
+            <p>{{form}}</p>
+            <p>{{form.help_text}}</p>
+
+        {% endfor %}
+        <button>Register</button>
+    </form>
+{% endblock %}

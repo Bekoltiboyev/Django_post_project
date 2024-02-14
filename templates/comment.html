@@ -1,0 +1,45 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Comment page</h1>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <img src="{{ posts.post_image.url }}" alt="{{y.title}}">
+                    <p>{{posts.id}}</p>
+                    <h1>{{posts.title}}</h1>
+                    <p>{{posts.text}}</p>
+                    <p>{{posts.created}} <i class="fa-solid fa-eye"></i></p>
+                </div>
+                <form action="{% url 'comment' posts.id %}" method="POST" class="mt-5 form">
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="btn btn-primary">save commit</button>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="scroll_box">
+                    {% for comment in comments %}
+                        <div class="col-12">
+                                <div class="comment border mb-2 w-100">
+                                    <div class="comment_box">
+                                        <div class="img_name">
+                                            <img style="width: 50px; height: 50px; border-radius: 50%;" src="{{comment.profile.userImg.url}}" alt="">
+                                            <p class="mb-0">{{comment.profile.name}}</p>
+                                        </div>
+                                        <a href=""><i class="fa-solid fa-pen"></i></a>
+                                    </div>
+                                    <p clas>{{comment}}</p>
+                                </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
