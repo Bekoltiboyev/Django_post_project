@@ -87,6 +87,7 @@ def CreatePostView(request, pk):
             form_data.save()
             return redirect('/')
         else:
+            return redirect('/')
             print("xato")
     form = CreatePostForm()
     ctx = {
