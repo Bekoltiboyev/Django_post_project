@@ -85,6 +85,7 @@ def CreatePostView(request, pk):
             profile_turi = form.cleaned_data['turi']
             form_data = Postmodel(profile=post_id,title=profile_title, text=profile_text,post_image=profile_img, turi=profile_turi)
             form_data.save()
+            return redirect('/')
         else:
             print("xato")
     form = CreatePostForm()

@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\backend_grup_3\24-dars_auth\env"
+VIRTUAL_ENV="C:\Users\ibado\Desktop\Django\git_hub\Django_post_project\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

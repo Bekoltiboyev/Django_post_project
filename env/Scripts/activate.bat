@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\backend_grup_3\24-dars_auth\env
+set VIRTUAL_ENV=C:\Users\ibado\Desktop\Django\git_hub\Django_post_project\env
 
 if not defined PROMPT set PROMPT=$P$G
 
